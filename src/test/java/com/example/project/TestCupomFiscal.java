@@ -18,7 +18,8 @@ public class TestCupomFiscal {
 				"CEP:13080-395 Tel (19) 3756-7408" + BREAK + 
 				"Loja 1317 (PDP)" + BREAK + 
 				"CNPJ: 42.591.651/0797-34" + BREAK + 
-				"IE: 244.898.500.113" + BREAK);
+				"IE: 244.898.500.113" + BREAK
+			);
 	}
 
 	@Test
@@ -80,23 +81,29 @@ public class TestCupomFiscal {
 	@Test
 	public void exercicio02_Customizado() {
 		//Defina seus próprios valores para as variáveis a seguir 
-		CupomFiscal.NOME_LOJA = "";
-		CupomFiscal.LOGRADOURO = "";
-		CupomFiscal.NUMERO = 0;
-		CupomFiscal.COMPLEMENTO = "";
-		CupomFiscal.BAIRRO = "";
-		CupomFiscal.MUNICIPIO = "";
-		CupomFiscal.ESTADO = "";
-		CupomFiscal.CEP = "";
-		CupomFiscal.TELEFONE = "";
-		CupomFiscal.OBSERVACAO = "";
-		CupomFiscal.CNPJ = "";
-		CupomFiscal.INSCRICAO_ESTADUAL = "";
+		CupomFiscal.NOME_LOJA = "Loja CRVG";
+		CupomFiscal.LOGRADOURO = "R. Gen. Almério de Moura";
+		CupomFiscal.NUMERO = 131;
+		CupomFiscal.COMPLEMENTO = "Estádio";
+		CupomFiscal.BAIRRO = "São Januário";
+		CupomFiscal.MUNICIPIO = "Rio de Janeiro";
+		CupomFiscal.ESTADO = "RJ";
+		CupomFiscal.CEP = "20921060";
+		CupomFiscal.TELEFONE = "(21) 91898-1927";
+		CupomFiscal.OBSERVACAO = "Obs 1";
+		CupomFiscal.CNPJ = "12.111.333/12133-12";
+		CupomFiscal.INSCRICAO_ESTADUAL = "123.456.789.000";
 		
 		//E atualize o texto esperado abaixo
-		rodarTestarOutput("" + BREAK);
+		rodarTestarOutput("Loja CRVG" + BREAK + 
+						"R. Gen. Almério de Moura, 131 Estádio" + BREAK + 
+						"São Januário - Rio de Janeiro - RJ" + BREAK + 
+						"CEP:20921060 Tel (21) 91898-1927" + BREAK + 
+						"Obs 1" + BREAK + 
+						"CNPJ: 12.111.333/12133-12" + BREAK + 
+						"IE: 123.456.789.000" + BREAK);
 	}
-
+	
 	private void rodarTestarOutput(String expected) {
 		PrintStream originalOut = System.out;
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
